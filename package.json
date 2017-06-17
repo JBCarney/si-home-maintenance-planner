@@ -1,6 +1,6 @@
 {
   "name": "si-home-maintenance-planner",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Snap Interactive full-stack home maintenance planner.",
   "engines": {
     "npm": ">=3"
@@ -56,6 +56,7 @@
     "babel-preset-stage-1": "6.16.0",
     "browser-sync": "2.18.5",
     "chalk": "1.1.3",
+    "color": "1.0.3",
     "connect-history-api-fallback": "1.3.0",
     "coveralls": "2.11.15",
     "css-loader": "0.26.1",
