@@ -1,8 +1,6 @@
 import * as ActionTypes from '../constants/actionTypes';
 import * as ActionCreators from './maintenanceTaskActions';
-
 import MockDate from 'mockdate';
-
 import {getFormattedDateTime} from '../utils/dateHelper';
 
 describe('Actions', () => {
