@@ -18,7 +18,7 @@ technologies (Sequelize and SQLite), so this is going to be fun!
 - Visual Studio Code (Lightweight, robust and a built in Terminal for kicking off processes. Awesome!)
 - Node.js: Comming from the .NET side I was supprised how much I like Nodejs.
 - Express: Standard for node.
-- React, Redux, Sagas: Newer but has been around long enough.
+- React, Redux, Thunk: I have worked with AngularJS 1.x and 2 and I prefer React's less opinionated approach.
 - XJS: I don't recall doing React development without it.
 - Bootstrap and SASS: I am not a designer but I like my projects to look like they wern't created by a backend developer.
 - Sequelize: I know I have not used this before. I am anticipating it being a bit simpler than EF.
@@ -32,5 +32,5 @@ technologies (Sequelize and SQLite), so this is going to be fun!
 - Travis CI: Compiles, reports and runs the application on a Linux environment. Integrates with GitHub. 
 - Appveyor: Compiles, reports and runs the application on a Windows environment. Integrates with GitHub.
 - Surge: Provides a development, static file CDN for the application's UI. Integrates with GitHub. 
-- Track:js: This service provides error reports during the QA process.
+- Track:js: This service provides error reports when application is running in production environment.
 - GitHub: So many reasons. Source control, project collaboration, etc...  

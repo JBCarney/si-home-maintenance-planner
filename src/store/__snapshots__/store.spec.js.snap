@@ -1,0 +1,11 @@
+exports[`Store should handle a flurry of actions 1`] = `
+Object {
+  "name": "1/31 23:14:01",
+  "createdDate": "1/31 23:14:01",
+  "dueDate": "1/31 23:14:01",
+  "modifiedDate": "1/31 23:14:01",
+  "completedDate": "1/31 23:14:01",
+  "completed": false,
+  "notes": "Lots of notes."
+}
+`;
