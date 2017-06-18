@@ -9,13 +9,21 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <IndexLink to="/">Home</IndexLink>
-        {' | '}
-        <Link to="/add-maintenance-task">Add Task</Link>
-        {' | '}
-        <Link to="/about">About</Link>
-        <br/>
+        <header>
+          <h1>Snap Interactive Full-Stack Home Maintenance Planner</h1>
+          <h2>Overview</h2>
+        </header>
+        <nav className="clearfix">
+          <ul>
+            <li className="active"><IndexLink to="/">Home</IndexLink></li>
+            <li><Link to="/maintenance-task">Add Task</Link></li>
+            <li><Link to="/about">About</Link></li>
+          </ul>
+        </nav>
         {this.props.children}
+        <footer>
+          <p>&copy;2017 Snap Interactive &bull; <a target="_blank" href="https://github.com/JBCarney/si-home-maintenance-planner">GitHub:SI Home Maintenance Planner</a></p>
+        </footer>
       </div>
     );
   }
