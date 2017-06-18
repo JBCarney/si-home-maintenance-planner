@@ -1,0 +1,17 @@
+{
+  "development": {
+    "dialect": "sqlite",
+    "storage": "../data/home_maintenance_tasks.db"
+  },
+  "test": {
+    "dialect": "sqlite",
+    "storage": ":memory:"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "../data/home_maintenance_tasks.db",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}

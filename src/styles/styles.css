@@ -159,6 +159,10 @@ main h2 {
 main h3 {
   font-size: 1.2rem;
   color: #6d7f9f; }
+main h4 {
+font-size: 1.2rem;
+margin: 0.75rem 0 0 2%;
+color: #566683; }
 main p {
   line-height: 130%;
   color: #35373a; }
