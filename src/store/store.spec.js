@@ -18,41 +18,41 @@ describe('Store', () => {
     const store = createStore(rootReducer, initialState);
 
     const actions = [
-      { type: ActionTypes.CREATE_MAINTENANCE_TASK, dateModified, settings: store.getState(), fieldName: 'newMpg', value: 20 },
-      { type: ActionTypes.CREATE_MAINTENANCE_TASK, dateModified, settings: store.getState(), fieldName: 'tradeMpg', value: 10 },
-      { type: ActionTypes.CREATE_MAINTENANCE_TASK, dateModified, settings: store.getState(), fieldName: 'newPpg', value: 1.50 },
-      { type: ActionTypes.CREATE_MAINTENANCE_TASK, dateModified, settings: store.getState(), fieldName: 'tradePpg', value: 1.50 },
-      { type: ActionTypes.CREATE_MAINTENANCE_TASK, dateModified, settings: store.getState(), fieldName: 'milesDriven', value: 100 },
-      { type: ActionTypes.CREATE_MAINTENANCE_TASK, dateModified, settings: store.getState(), fieldName: 'milesDrivenTimeframe', value: 'month' }
+      { type: ActionTypes.CREATE_MAINTENANCE_TASK, dateModified, settings: store.getState(), fieldName: 'name', value: 'Fix AC' },
+      { type: ActionTypes.CREATE_MAINTENANCE_TASK, dateModified, settings: store.getState(), fieldName: 'dateCreated', value: '6/17 14:14:01' },
+      { type: ActionTypes.CREATE_MAINTENANCE_TASK, dateModified, settings: store.getState(), fieldName: 'dateDue', value: '6/20 12:12:01' },
+      { type: ActionTypes.CREATE_MAINTENANCE_TASK, dateModified, settings: store.getState(), fieldName: 'dateModified', value: '6/17 14:14:01' },
+      { type: ActionTypes.CREATE_MAINTENANCE_TASK, dateModified, settings: store.getState(), fieldName: 'dateCompleted', value: null },
+      { type: ActionTypes.CREATE_MAINTENANCE_TASK, dateModified, settings: store.getState(), fieldName: 'completed', value: false },
+      { type: ActionTypes.CREATE_MAINTENANCE_TASK, dateModified, settings: store.getState(), fieldName: 'notes', value: 'Fix the Air Conditioning unit.' }
     ];
     actions.forEach(action => store.dispatch(action));
 
     const actual = store.getState();
     const expected = {
-      newMpg: 20,
-      tradeMpg: 10,
-      newPpg: 1.50,
-      tradePpg: 1.50,
-      milesDriven: 100,
-      milesDrivenTimeframe: 'month',
-      displayResults: false,
-      dateModified,
-      necessaryDataIsProvidedToCalculateSavings: true,
-      savings: calculator().calculateSavings(store.getState().fuelSavings)
+      name: 'Fix AC',
+      dateCreated: '6/17 14:14:01',
+      dateDue: '6/20 12:12:01',
+      dateModified: '6/17 14:14:01',
+      dateCompleted: null,
+      completed: false,
+      notes: 'Fix the Air Conditioning unit.'
     };
 
-    expect(actual.fuelSavings).toEqual(expected);
+    expect(actual).toEqual(expected);
   });
 
   it('should not display results when necessary data is not provided', () => {
     const store = createStore(rootReducer, initialState);
 
     const actions = [
-      { type: ActionTypes.SAVE_MAINTENANCE_TASK, dateModified, settings: store.getState(), fieldName: 'newMpg', value: 20 },
-      { type: ActionTypes.SAVE_MAINTENANCE_TASK, dateModified, settings: store.getState(), fieldName: 'tradeMpg', value: 10 },
-      { type: ActionTypes.SAVE_MAINTENANCE_TASK, dateModified, settings: store.getState(), fieldName: 'tradePpg', value: 1.50 },
-      { type: ActionTypes.SAVE_MAINTENANCE_TASK, dateModified, settings: store.getState(), fieldName: 'milesDriven', value: 100 },
-      { type: ActionTypes.SAVE_MAINTENANCE_TASK, dateModified, settings: store.getState(), fieldName: 'milesDrivenTimeframe', value: 'month' }
+      { type: ActionTypes.SAVE_MAINTENANCE_TASK, dateModified, settings: store.getState(), fieldName: 'name', value: 'Fix AC' },
+      { type: ActionTypes.SAVE_MAINTENANCE_TASK, dateModified, settings: store.getState(), fieldName: 'dateCreated', value: '6/17 14:14:01' },
+      { type: ActionTypes.SAVE_MAINTENANCE_TASK, dateModified, settings: store.getState(), fieldName: 'dateDue', value: '6/20 12:12:01' },
+      { type: ActionTypes.SAVE_MAINTENANCE_TASK, dateModified, settings: store.getState(), fieldName: 'dateModified', value: '6/17 14:14:01' },
+      { type: ActionTypes.SAVE_MAINTENANCE_TASK, dateModified, settings: store.getState(), fieldName: 'dateCompleted', value: null },
+      { type: ActionTypes.SAVE_MAINTENANCE_TASK, dateModified, settings: store.getState(), fieldName: 'completed', value: false },
+      { type: ActionTypes.SAVE_MAINTENANCE_TASK, dateModified, settings: store.getState(), fieldName: 'notes', value: 'Fix the Air Conditioning unit.' }
     ];
 
     actions.forEach(action => store.dispatch(action));
@@ -60,52 +60,48 @@ describe('Store', () => {
     const actual = store.getState();
 
     const expected = {
-      newMpg: 20,
-      tradeMpg: 10,
-      newPpg: '',
-      tradePpg: 1.5,
-      milesDriven: 100,
-      milesDrivenTimeframe: 'month',
-      displayResults: false,
-      dateModified,
-      necessaryDataIsProvidedToCalculateSavings: false,
-      savings: { annual: 0, monthly: 0, threeYear: 0 }
+      name: 'Fix AC',
+      dateCreated: '6/17 14:14:01',
+      dateDue: '6/20 12:12:01',
+      dateModified: '6/17 14:14:01',
+      dateCompleted: null,
+      completed: false,
+      notes: 'Fix the Air Conditioning unit.'
     };
 
+    expect(actual).toEqual(expected);
 
-    expect(actual.fuelSavings).toEqual(expected);
-  });
-
-
-  it('should handle a flurry of actions', () => {
+    it('should not display results when necessary data is not provided', () => {
     const store = createStore(rootReducer, initialState);
 
     const actions = [
-      { type: ActionTypes.COMPLETE_MAINTENANCE_TASK, dateModified, settings: store.getState(), fieldName: 'newMpg', value: 20 },
-      { type: ActionTypes.COMPLETE_MAINTENANCE_TASK, dateModified, settings: store.getState(), fieldName: 'tradeMpg', value: 10 },
-      { type: ActionTypes.COMPLETE_MAINTENANCE_TASK, dateModified, settings: store.getState(), fieldName: 'newPpg', value: 1.50 },
-      { type: ActionTypes.COMPLETE_MAINTENANCE_TASK, dateModified, settings: store.getState(), fieldName: 'tradePpg', value: 1.50 },
-      { type: ActionTypes.COMPLETE_MAINTENANCE_TASK, dateModified, settings: store.getState(), fieldName: 'milesDriven', value: 100 },
-      { type: ActionTypes.COMPLETE_MAINTENANCE_TASK, dateModified, settings: store.getState(), fieldName: 'milesDrivenTimeframe', value: 'month' },
-      { type: ActionTypes.COMPLETE_MAINTENANCE_TASK, dateModified, settings: store.getState(), fieldName: 'newMpg', value: 20 },
+      { type: ActionTypes.COMPLETE_MAINTENANCE_TASK, dateModified, settings: store.getState(), fieldName: 'name', value: 'Fix AC' },
+      { type: ActionTypes.COMPLETE_MAINTENANCE_TASK, dateModified, settings: store.getState(), fieldName: 'dateCreated', value: '6/17 14:14:01' },
+      { type: ActionTypes.COMPLETE_MAINTENANCE_TASK, dateModified, settings: store.getState(), fieldName: 'dateDue', value: '6/20 12:12:01' },
+      { type: ActionTypes.COMPLETE_MAINTENANCE_TASK, dateModified, settings: store.getState(), fieldName: 'dateModified', value: '6/17 14:14:01' },
+      { type: ActionTypes.COMPLETE_MAINTENANCE_TASK, dateModified, settings: store.getState(), fieldName: 'dateCompleted', value: null },
+      { type: ActionTypes.COMPLETE_MAINTENANCE_TASK, dateModified, settings: store.getState(), fieldName: 'completed', value: false },
+      { type: ActionTypes.COMPLETE_MAINTENANCE_TASK, dateModified, settings: store.getState(), fieldName: 'notes', value: 'Fix the Air Conditioning unit.' }
     ];
+
     actions.forEach(action => store.dispatch(action));
 
-    calculator().calculateSavings(store.getState().fuelSavings);
-
-    const moreActions = [
-      { type: ActionTypes.CALCULATE_FUEL_SAVINGS, dateModified, settings: store.getState(), fieldName: 'tradePpg', value: 0 },
-      { type: ActionTypes.CALCULATE_FUEL_SAVINGS, dateModified, settings: store.getState(), fieldName: 'milesDriven', value: 100 },
-      { type: ActionTypes.CALCULATE_FUEL_SAVINGS, dateModified, settings: store.getState(), fieldName: 'milesDrivenTimeframe', value: 'year' }
-    ];
-
-    moreActions.forEach(action => store.dispatch(action));
-
     const actual = store.getState();
-    // with jest snapshots the above assertion can be replaced with this one line
-    // jest will store the value in a file within ./__snapshots__
-    // snapshots can/should be committed and reviewed
-    // jest will also update snapshot or delete unused ones using the command `npm run test -- -u`
-    expect(actual.fuelSavings).toMatchSnapshot();
+
+    const expected = {
+      name: 'Fix AC',
+      dateCreated: '6/17 14:14:01',
+      dateDue: '6/20 12:12:01',
+      dateModified: '6/17 14:14:01',
+      dateCompleted: null,
+      completed: false,
+      notes: 'Fix the Air Conditioning unit.'
+    };
+
+    expect(actual).toEqual(expected);
+  });
+
+
+
   });
 });

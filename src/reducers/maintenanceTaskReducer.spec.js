@@ -19,13 +19,13 @@ describe('Reducers::MaintenanceTask', () => {
 
   const getAppState = () => {
     return {
-      name: 'Fix Sink',
-      dateCreated: '06-17-2017',
-      dateDue: null,
-      dateModified: null,
+      name: 'Fix AC',
+      dateCreated: '6/17 14:14:01',
+      dateDue: '6/20 12:12:01',
+      dateModified: '6/17 14:14:01',
       dateCompleted: null,
       completed: false,
-      notes: ''
+      notes: 'Fix the Air Conditioning unit.'
     };
   };
   const dateModified = getFormattedDateTime();
@@ -38,8 +38,8 @@ describe('Reducers::MaintenanceTask', () => {
   });
 
   it('should handle CREATE_MAINTENANCE_TASK', () => {
-    const action = { type: ActionTypes.CREATE_MAINTENANCE_TASK, dateCreated, settings: getAppState() };
-    const expected = Object.assign(getAppState(), { dateCreated });
+    const action = { type: ActionTypes.CREATE_MAINTENANCE_TASK, dateModified, settings: getAppState() };
+    const expected = Object.assign(getAppState(), { dateModified });
 
     expect(reducer(getAppState(), action)).toEqual(expected);
   });
@@ -52,12 +52,9 @@ describe('Reducers::MaintenanceTask', () => {
   });
 
   it('should handle COMPLETE_MAINTENANCE_TASK', () => {
-    const action = { type: ActionTypes.COMPLETE_MAINTENANCE_TASK, dateCompleted, settings: getAppState(), fieldName: 'dateCompleted', value: '06-17-2017' };
+    const action = { type: ActionTypes.COMPLETE_MAINTENANCE_TASK, dateModified, settings: getAppState() };
+    const expected = Object.assign(getAppState(), { dateModified });
 
-    const dateCompleted = '06-17-2017';
-    const completed = true;
-
-    expect(reducer(getAppState(), action).dateCompleted).toEqual(dateCompleted);
-    expect(reducer(getAppState(), action).completed).toEqual(completed);
+    expect(reducer(getAppState(), action)).toEqual(expected);
   });
 });

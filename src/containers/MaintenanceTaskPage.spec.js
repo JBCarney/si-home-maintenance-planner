@@ -7,10 +7,9 @@ describe('<MaintenanceTaskPage />', () => {
   it('should contain <MaintenanceTaskForm />', () => {
     const actions = {
       saveMaintenanceTask: () => { },
-      completeMaintenanceTask: () => { }
     };
     const maintenanceTask = {};
-    const wrapper = shallow(<MaintenanceTaskPage actions={actions} taskName={taskName}/>);
+    const wrapper = shallow(<MaintenanceTaskPage actions={actions} maintenanceTask={maintenanceTask}/>);
 
     expect(wrapper.find(MaintenanceTaskForm).length).toEqual(1);
   });
