@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import * as actions from '../actions/maintenanceTaskActions';
-import MaintenanceTaskForm from '../components/maintenanceTaskForm';
+import * as actions from '../actions/MaintenanceTaskActions';
+import MaintenanceTaskForm from '../components/MaintenanceTaskForm';
 
 export const MaintenanceTaskPage = (props) => {
   return (
     <MaintenanceTaskForm
+      createMaintenanceTask={props.actions.saveMaintenanceTask}
       saveMaintenanceTask={props.actions.saveMaintenanceTask}
       completeMaintenanceTask={props.actions.completeMaintenanceTask}
       maintenanceTask={props.maintenanceTask}

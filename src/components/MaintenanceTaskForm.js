@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import MaintenanceTaskLoad from './MaintenanceTaskList';
 import MaintenanceTaskTextInput from './MaintenanceTaskTextInput';
 
 class MaintenanceTaskForm extends React.Component {
@@ -53,7 +52,7 @@ class MaintenanceTaskForm extends React.Component {
           </tr>
           <tr>
             <td><label>Date Due to be Completed</label></td>
-            <td>{maintenanceTask.dueDate}</td>
+            <td>{maintenanceTask.dateDue}</td>
           </tr>
           <tr>
             <td><label>Date Modified</label></td>
@@ -66,7 +65,6 @@ class MaintenanceTaskForm extends React.Component {
           </tbody>
         </table>
         <hr/>
-        {maintenanceTask.necessaryDataIsProvidedToSaveTask && <MaintenanceTaskLoad name={maintenanceTask.name}/>}
         <input type="submit" value="Save Task" onClick={this.save}/>
       </div>
     );
@@ -74,6 +72,7 @@ class MaintenanceTaskForm extends React.Component {
 }
 
 MaintenanceTaskForm.propTypes = {
+  createMaintenanceTask: PropTypes.func.isRequired,
   saveMaintenanceTask: PropTypes.func.isRequired,
   completeMaintenanceTask: PropTypes.func.isRequired,
   maintenanceTask: PropTypes.object.isRequired

@@ -1,10 +1,10 @@
 export default {
   maintenanceTask: {
     name: '',
-    createdDate: null,
-    dueDate: null,
-    modifiedDate: null,
-    completedDate: null,
+    dateCreated: null,
+    dateDue: null,
+    dateModified: null,
+    dateCompleted: null,
     completed: false,
     notes: ''
   }

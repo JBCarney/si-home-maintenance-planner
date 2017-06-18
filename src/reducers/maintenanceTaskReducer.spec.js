@@ -7,10 +7,10 @@ describe('Reducers::MaintenanceTask', () => {
     return {
       maintenanceTask: {
         name: '',
-        createdDate: null,
-        dueDate: null,
-        modifiedDate: null,
-        completedDate: null,
+        dateCreated: null,
+        dateDue: null,
+        dateModified: null,
+        dateCompleted: null,
         completed: false,
         notes: ''
       }
@@ -20,10 +20,10 @@ describe('Reducers::MaintenanceTask', () => {
   const getAppState = () => {
     return {
       name: 'Fix Sink',
-      createdDate: '06-17-2017',
-      dueDate: null,
-      modifiedDate: null,
-      completedDate: null,
+      dateCreated: '06-17-2017',
+      dateDue: null,
+      dateModified: null,
+      dateCompleted: null,
       completed: false,
       notes: ''
     };
@@ -52,7 +52,7 @@ describe('Reducers::MaintenanceTask', () => {
   });
 
   it('should handle COMPLETE_MAINTENANCE_TASK', () => {
-    const action = { type: ActionTypes.COMPLETE_MAINTENANCE_TASK, dateCompleted, settings: getAppState(), fieldName: 'completedDate', value: '06-17-2017' };
+    const action = { type: ActionTypes.COMPLETE_MAINTENANCE_TASK, dateCompleted, settings: getAppState(), fieldName: 'dateCompleted', value: '06-17-2017' };
 
     const dateCompleted = '06-17-2017';
     const completed = true;

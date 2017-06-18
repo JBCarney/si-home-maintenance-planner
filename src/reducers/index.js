@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
-import taskName from './taskNameReducer';
+import maintenanceTask from './maintenanceTaskReducer';
 import {routerReducer} from 'react-router-redux';
 
 const rootReducer = combineReducers({
-  taskName,
+  maintenanceTask,
   routing: routerReducer
 });
 

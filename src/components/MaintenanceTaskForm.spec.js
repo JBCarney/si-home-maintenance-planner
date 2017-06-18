@@ -14,10 +14,10 @@ describe('<MaintenanceTaskForm />', () => {
 
     const maintenanceTask = {
       name: 'Fix Sink',
-      createdDate: '06-17-2017',
-      dueDate: null,
-      modifiedDate: null,
-      completedDate: null,
+      dateCreated: '06-17-2017',
+      dateDue: null,
+      dateModified: null,
+      dateCompleted: null,
       completed: false,
       notes: null
     };
@@ -33,14 +33,14 @@ describe('<MaintenanceTaskForm />', () => {
     expect(allInputs.length).toEqual(5);
     expect(allInputs.at(0).props().name).toEqual('name');
     expect(allInputs.at(0).props().value).toEqual(maintenanceTask.name);
-    expect(allInputs.at(1).props().name).toEqual('createdDate');
-    expect(allInputs.at(1).props().value).toEqual(maintenanceTask.createdDate);
-    expect(allInputs.at(2).props().name).toEqual('dueDate');
-    expect(allInputs.at(2).props().value).toEqual(maintenanceTask.dueDate);
-    expect(allInputs.at(3).props().name).toEqual('modifiedDate');
-    expect(allInputs.at(3).props().value).toEqual(maintenanceTask.modifiedDate);
-    expect(allInputs.at(4).props().name).toEqual('completedDate');
-    expect(allInputs.at(4).props().value).toEqual(maintenanceTask.completedDate);
+    expect(allInputs.at(1).props().name).toEqual('dateCreated');
+    expect(allInputs.at(1).props().value).toEqual(maintenanceTask.dateCreated);
+    expect(allInputs.at(2).props().name).toEqual('dateDue');
+    expect(allInputs.at(2).props().value).toEqual(maintenanceTask.dateDue);
+    expect(allInputs.at(3).props().name).toEqual('dateModified');
+    expect(allInputs.at(3).props().value).toEqual(maintenanceTask.dateModified);
+    expect(allInputs.at(4).props().name).toEqual('dateCompleted');
+    expect(allInputs.at(4).props().value).toEqual(maintenanceTask.dateCompleted);
     expect(allInputs.at(5).props().name).toEqual('completed');
     expect(allInputs.at(5).props().value).toEqual(maintenanceTask.completed);
     expect(allInputs.at(6).props().name).toEqual('notes');
@@ -56,10 +56,10 @@ describe('<MaintenanceTaskForm />', () => {
     };
     const maintenanceTask = {
       name: 'Fix Sink',
-      createdDate: '06-17-2017',
-      dueDate: null,
-      modifiedDate: null,
-      completedDate: null,
+      dateCreated: '06-17-2017',
+      dateDue: null,
+      dateModified: null,
+      dateCompleted: null,
       completed: false,
       notes: null
     };
@@ -84,10 +84,10 @@ describe('<MaintenanceTaskForm />', () => {
     };
     const maintenanceTask = {
       name: 'Fix Sink',
-      createdDate: '06-17-2017',
-      dueDate: null,
-      modifiedDate: null,
-      completedDate: null,
+      dateCreated: '06-17-2017',
+      dateDue: null,
+      dateModified: null,
+      dateCompleted: null,
       completed: false,
       notes: null
     };
@@ -111,10 +111,10 @@ describe('<MaintenanceTaskForm />', () => {
     };
     const maintenanceTask = {
       name: 'Fix Sink',
-      createdDate: '06-17-2017',
-      dueDate: null,
-      modifiedDate: null,
-      completedDate: null,
+      dateCreated: '06-17-2017',
+      dateDue: null,
+      dateModified: null,
+      dateCompleted: null,
       completed: false,
       notes: ''
     };
@@ -139,10 +139,10 @@ describe('<MaintenanceTaskForm />', () => {
     };
     const maintenanceTask = {
       name: 'Fix Sink',
-      createdDate: '06-17-2017',
-      dueDate: null,
-      modifiedDate: null,
-      completedDate: null,
+      dateCreated: '06-17-2017',
+      dateDue: null,
+      dateModified: null,
+      dateCompleted: null,
       completed: false,
       notes: ''
     };

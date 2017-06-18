@@ -12,13 +12,13 @@ describe('Actions', () => {
   afterAll(() => MockDate.reset());
 
   const appState = {
-    name: 'Fix Sink',
-    createdDate: '06-17-2017',
-    dueDate: null,
-    modifiedDate: null,
-    completedDate: null,
+    name: '',
+    dateCreated: null,
+    dateDue: null,
+    dateModified: null,
+    dateCompleted: null,
     completed: false,
-    notes: null
+    notes: ''
   };
 
   it('should save the changes to the maintenance task', () => {
