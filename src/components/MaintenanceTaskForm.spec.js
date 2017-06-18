@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import MaintenanceTaskForm from './MaintenanceTaskForm';
-import MaintenanceTaskTextInput from './MaintenanceTaskTextInput';
 
 describe('<MaintenanceTaskForm />', () => {
   it('should contain <MaintenanceTaskTextInput /> components', () => {
@@ -9,19 +8,19 @@ describe('<MaintenanceTaskForm />', () => {
     };
 
     const maintenanceTask = {
-      name: 'Fix Sink',
-      dateCreated: '06-17-2017',
-      dateDue: null,
-      dateModified: null,
+      name: 'Fix AC',
+      dateCreated: '6/17 14:14:01',
+      dateDue: '6/20 12:12:01',
+      dateModified: '6/17 14:14:01',
       dateCompleted: null,
       completed: false,
-      notes: null
+      notes: 'Fix the Air Conditioning unit.'
     };
 
     const wrapper = shallow(<MaintenanceTaskForm
       saveMaintenanceTask={saveMaintenanceTask}
     />);
-    const allInputs = wrapper.find(MaintenanceTaskTextInput);
+    const allInputs = wrapper.find(MaintenanceTaskForm);
 
     expect(allInputs.at(0).props().name).toEqual('name');
     expect(allInputs.at(0).props().value).toEqual(maintenanceTask.name);

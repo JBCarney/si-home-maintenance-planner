@@ -12,13 +12,13 @@ describe('Actions', () => {
   afterAll(() => MockDate.reset());
 
   const appState = {
-    name: '',
-    dateCreated: null,
-    dateDue: null,
-    dateModified: null,
-    dateCompleted: null,
-    completed: false,
-    notes: ''
+    name: 'Fix AC',
+      dateCreated: '6/17 14:14:01',
+      dateDue: '6/20 12:12:01',
+      dateModified: '6/17 14:14:01',
+      dateCompleted: null,
+      completed: false,
+      notes: 'Fix the Air Conditioning unit.'
   };
 
   it('should save the changes to the maintenance task', () => {

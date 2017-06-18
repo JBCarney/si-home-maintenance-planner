@@ -1,22 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import MaintenanceTaskTextInput from './MaintenanceTaskTextInput';
 
 class MaintenanceTaskForm extends React.Component {
   constructor(props, context) {
     super(props, context);
 
     this.save = this.save.bind(this);
-    this.onTimeframeChange = this.onTimeframeChange.bind(this);
-    this.maintenanceTaskKeypress = this.maintenanceTaskKeypress.bind(this);
-  }
-
-  onTimeframeChange(e) {
-    this.props.completeMaintenanceTask(this.props.maintenanceTask, 'name', e.target.value);
-  }
-
-  maintenanceTaskKeypress(name, value) {
-    this.props.completeMaintenanceTask(this.props.maintenanceTask, name, value);
   }
 
   save() {
@@ -33,17 +22,17 @@ class MaintenanceTaskForm extends React.Component {
           <tbody>
           <tr>
             <td><label htmlFor="name">Task Name</label></td>
-            <td><MaintenanceTaskTextInput onChange={this.maintenanceTaskKeypress} name="name" value={maintenanceTask.name}/>
+            <td><input type="text" name="name" value={maintenanceTask.name}/>
             </td>
           </tr>
           <tr>
             <td><label htmlFor="completed">Task Completed</label></td>
-            <td><MaintenanceTaskTextInput onChange={this.maintenanceTaskKeypress} name="completed" value={maintenanceTask.completed}/>
+            <td><input type="text" name="completed" value={maintenanceTask.completed}/>
             </td>
           </tr>
           <tr>
             <td><label htmlFor="notes">Task Notes</label></td>
-            <td><MaintenanceTaskTextInput onChange={this.maintenanceTaskKeypress} name="notes" value={maintenanceTask.notes}/>
+            <td><input type="text" name="notes" value={maintenanceTask.notes}/>
             </td>
           </tr>
           <tr>
@@ -72,10 +61,8 @@ class MaintenanceTaskForm extends React.Component {
 }
 
 MaintenanceTaskForm.propTypes = {
-  createMaintenanceTask: PropTypes.func.isRequired,
-  saveMaintenanceTask: PropTypes.func.isRequired,
-  completeMaintenanceTask: PropTypes.func.isRequired,
-  maintenanceTask: PropTypes.object.isRequired
+  saveMaintenanceTask: PropTypes.func.isRequired//,
+  //maintenanceTask: PropTypes.object.isRequired
 };
 
 export default MaintenanceTaskForm;
