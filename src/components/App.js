@@ -10,8 +10,7 @@ class App extends React.Component {
     return (
       <div>
         <header>
-          <h1>Snap Interactive Full-Stack Home Maintenance Planner</h1>
-          <h2>Overview</h2>
+          <h1>Snap Interactive Home Maintenance Planner</h1>
         </header>
         <nav className="clearfix">
           <ul>

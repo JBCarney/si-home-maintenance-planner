@@ -1,8 +1,5 @@
 /*  ----------------------- BODY --------------------------- */
 
-
- 
-
 /*  ----------------------- NAVIGATION --------------------------- */
 nav {
     ul {
@@ -16,25 +13,19 @@ nav {
     }
 } // end nav
 
-
-
-
-
-
-
-
 /*  ----------------------- MAIN --------------------------- */
 main {
     figure.photo {width: 25%-$gutterdbl; float: left; }
-    
-    
+
     div.blog article {
         float: left;
         width: 33.33%-$gutterdbl;
     } // end blog
-    
+
     div.blog article:nth-child(2n+1) { clear: none;}
     div.blog article:nth-child(3n+1) { clear: left;}
-    
-    
+
+    div.create {
+      margin: 0.75rem 0 0 2%;
+    }
 } // end main
