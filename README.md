@@ -17,15 +17,14 @@ technologies (Sequelize and SQLite), so this is going to be fun!
 ## Tools and Frameworks
 - Visual Studio Code (Lightweight, robust and a built in Terminal for kicking off processes. Awesome!)
 - Node.js: Comming from the .NET side I was supprised how much I like Nodejs.
-- Express: Standard for node.
-- React, Redux, Thunk: I have worked with AngularJS 1.x and 2 and I prefer React's less opinionated approach.
-- XJS: I don't recall doing React development without it.
+- Express: Going with the old standard for node here.
+- React, Redux, Thunk and Saga: I have worked with AngularJS 1.x and 2 and I prefer React's less opinionated approach.
 - Bootstrap and SASS: I am not a designer but I like my projects to look like they wern't created by a backend developer.
 - Sequelize: I know I have not used this before. I am anticipating it being a bit simpler than EF.
 - SQLite: I don't recall using this before so it will be interesting.
 - ESLint: This can be annoying until the team agrees on standards. The Airbnb standard seems to be a good start usually.
 - Babel: I like Babel over TypeScript/CoffeeScript because it transpiles without having to memorize yet another language.
-- Mocha, Chia: I have used this testing and assertion framework the most so I am comfortable with them.
+- Jest: Mocha and Chia were my first thoughts for testing and assertion frameworks but Jest is gaining popularity and is from the Facebook team so I think this would be a good opportunity to check it out.
 - Chalk: Provides color highlighting in the terminal to help make errors and warnings stand out.
 - Webpack: Almost magical bundler and soon it will include Tree Shaking!
 - NPM-Scripts: Implements in the package.json and removes the need for extra libraries like Grunt and Gulp.
