@@ -15,7 +15,6 @@ class App extends React.Component {
         <nav className="clearfix">
           <ul>
             <li className="active"><IndexLink to="/">Home</IndexLink></li>
-            <li><Link to="/maintenance-task">Add Task</Link></li>
             <li><Link to="/about">About</Link></li>
           </ul>
         </nav>

@@ -13,48 +13,86 @@ class MaintenanceTaskForm extends React.Component {
   }
 
   render() {
-    const {maintenanceTask} = this.props;
+    const { maintenanceTask } = this.props;
 
     return (
       <div>
-        <h2>Snap Interactive Home Maintenance Planner Task</h2>
-        <table>
-          <tbody>
-          <tr>
-            <td><label htmlFor="name">Task Name</label></td>
-            <td><input type="text" name="name" value={maintenanceTask.name}/>
-            </td>
-          </tr>
-          <tr>
-            <td><label htmlFor="completed">Task Completed</label></td>
-            <td><input type="text" name="completed" value={maintenanceTask.completed}/>
-            </td>
-          </tr>
-          <tr>
-            <td><label htmlFor="notes">Task Notes</label></td>
-            <td><input type="text" name="notes" value={maintenanceTask.notes}/>
-            </td>
-          </tr>
-          <tr>
-            <td><label>Date Created</label></td>
-            <td>{maintenanceTask.dateModified}</td>
-          </tr>
-          <tr>
-            <td><label>Date Due to be Completed</label></td>
-            <td>{maintenanceTask.dateDue}</td>
-          </tr>
-          <tr>
-            <td><label>Date Modified</label></td>
-            <td>{maintenanceTask.dateModified}</td>
-          </tr>
-          <tr>
-            <td><label>Date Completed</label></td>
-            <td>{maintenanceTask.dateCompleted}</td>
-          </tr>
-          </tbody>
-        </table>
-        <hr/>
-        <input type="submit" value="Save Task" onClick={this.save}/>
+        <h2>Create a new user</h2>
+        <div className="create">
+          <input type="text" name="newUser" />&nbsp;
+        <input type="button" name="createNewUser" value="ADD USERS" />
+        </div>
+        <h1>Home Maintenance Tasks</h1>
+        <hr className="fadeAway" />
+        <h2>Genevieve <i className="fa fa-trash-o" onClick="" aria-hidden="true"></i></h2>
+        <h4>Create a new Task</h4>
+        <div className="create">
+          <input type="text" name="newTask" />&nbsp;
+        <input type="button" name="createNewTask" value="CREATE" />
+        </div>
+        <div className="blog">
+          <article>
+            <h3>Fix the AC Unit <i className="fa fa-window-close-o" aria-hidden="true"></i></h3>
+            <p>Elementum, sagittis adipiscing, nec et? porta placerat ultrices odio diam in, urna phasellus in
+                    ac egestas egestas nunc, pellentesque, non porta, nisi turpis. Ultricies integer sociis etiam ultrices
+                    dis facilisis nascetur. Pellentesque cursusnon porta, nisi turpis. Ultricies integer sociis etiam ultrices
+                    dis facilisis nascetur. Pellentesque cursus integer mauris augue enim. Add additional words so that it
+                    is taller than the one to the right.</p>
+          </article>
+          <article>
+            <h3>Repair Kids Bathroom Sink <i className="fa fa-window-close-o" aria-hidden="true"></i></h3>
+            <p>Elementum, sagittis adipiscing, nec et? porta placerat ultrices odio diam in, urna phasellus in
+                    ac egestas egestas nunc, pellentesque, non porta, nisi turpis. Ultricies integer sociis etiam ultrices
+                    dis facilisis nascetur. Pellentesque cursus integer mauris augue enim</p>
+          </article>
+          <article>
+            <h3>Get New Gloves for Jeeves <i className="fa fa-window-close-o" aria-hidden="true"></i></h3>
+            <p>Elementum, sagittis adipiscing, nec et? porta placerat ultrices odio diam in, urna phasellus in
+                    ac egestas egestas nunc, pellentesque, non porta, nisi turpis. Ultricies integer sociis etiam ultrices
+                    dis facilisis nascetur. Pellentesque cursus integer mauris augue enimElementum, sagittis adipiscing,
+                    nec et? Ridiculus, porta placerat ultrices odio diam in, urna phasellus in ac egestas egestas nunc, pellentesque,
+                    non porta, nisi turpis. Ultricies integer sociis etiam ultrices dis facilisis nascetur. Pellentesque
+                    cursus integer mauris augue enim</p>
+          </article>
+        </div>
+        <h2>Jordan <i className="fa fa-trash-o" onClick="" aria-hidden="true"></i></h2>
+        <h4>Create a new Task</h4>
+        <div className="create">
+          <input type="text" name="newTask" />&nbsp;
+        <input type="button" name="createNewTask" value="CREATE" />
+        </div>
+        <div className="blog">
+          <article>
+            <h3>Wash the Cars, All of them <i className="fa fa-window-close-o" aria-hidden="true"></i></h3>
+            <p>Elementum, sagittis adipiscing, nec et? porta placerat ultrices odio diam in, urna phasellus in
+                    ac egestas egestas nunc, pellentesque, non porta, nisi turpis. Ultricies integer sociis etiam ultrices
+                    dis facilisis nascetur. Pellentesque cursus integer mauris augue enim</p>
+          </article>
+          <article>
+            <h3>Replace 70" 4K TV <i className="fa fa-window-close-o" aria-hidden="true"></i></h3>
+            <p>Elementum, sagittis adipiscing, nec et? porta placerat ultrices odio diam in, urna phasellus in
+                    ac egestas egestas nunc, pellentesque, non porta, nisi turpis. Ultricies integer sociis etiam ultrices
+                    dis facilisis nascetur. Pellentesque cursus integer mauris augue enim</p>
+          </article>
+          <article>
+            <h3>Clean the Pool <i className="fa fa-window-close-o" aria-hidden="true"></i></h3>
+            <p>Elementum, sagittis adipiscing, nec et? porta placerat ultrices odio diam in, urna phasellus in
+                    ac egestas egestas nunc, pellentesque, non porta, nisi turpis. Ultricies integer sociis etiam ultrices
+                    dis facilisis nascetur. Pellentesque cursus integer mauris augue enim</p>
+          </article>
+          <article>
+            <h3>Clean the Garage, Both of them <i className="fa fa-window-close-o" aria-hidden="true"></i></h3>
+            <p>Elementum, sagittis adipiscing, nec et? porta placerat ultrices odio diam in, urna phasellus in
+                    ac egestas egestas nunc, pellentesque, non porta, nisi turpis. Ultricies integer sociis etiam ultrices
+                    dis facilisis nascetur. Pellentesque cursus integer mauris augue enim</p>
+          </article>
+          <article>
+            <h3>Take a nap <i className="fa fa-window-close-o" aria-hidden="true"></i></h3>
+            <p>Elementum, sagittis adipiscing, nec et? placerat ultrices odio diam in, urna phasellus in
+                    ac egestas egestas nunc, pellentesque, non porta, nisi turpis. Ultricies integer sociis etiam ultrices
+                    dis facilisis nascetur. Pellentesque cursus integer mauris augue enim</p>
+          </article>
+        </div>
       </div>
     );
   }
