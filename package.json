@@ -3,7 +3,7 @@
   "version": "0.1.2",
   "description": "Snap Interactive full-stack home maintenance planner.",
   "engines": {
-    "npm": "5.12.0"
+    "node": "5.12.0"
   },
   "scripts": {
     "preinstall": "node tools/nodeVersionCheck.js",
