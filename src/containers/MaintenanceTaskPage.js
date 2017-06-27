@@ -19,7 +19,7 @@ MaintenanceTaskPage.propTypes = {
 
 function mapStateToProps(state) {
   return {
-    maintenanceTask: state.maintenanceTask
+    maintenanceTasks: state.maintenanceTasks
   };
 }
 

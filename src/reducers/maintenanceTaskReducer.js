@@ -9,7 +9,7 @@ import initialState from './initialState';
 // and update values on the copy.
 export default function maintenanceTaskReducer(state = initialState.maintenanceTask, action) {
   let newState;
-
+debugger;
   switch (action.type) {
     case CREATE_MAINTENANCE_TASK:
       // For this example, just simulating a save by changing date modified.

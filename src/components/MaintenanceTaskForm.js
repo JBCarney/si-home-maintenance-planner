@@ -1,35 +1,71 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
+import * as actions from '../actions/maintenanceTaskActions';
 
 class MaintenanceTaskForm extends React.Component {
   constructor(props, context) {
     super(props, context);
 
-    this.save = this.save.bind(this);
+    this.state = {
+      maintenanceTask: {
+        _id: "",
+        staffMemberName: "",
+        taskTitle: "",
+        taskDescription: "",
+        taskCompleted: false
+      }
+    }
+
+    this.onStaffMemberNameChange = this.onStaffMemberNameChange.bind(this);
+    this.onTaskTitleChange = this.onTaskTitleChange.bind(this);
+    this.onTaskDescriptionChange = this.onTaskDescriptionChange.bind(this);
+    this.onClickCreate = this.onClickCreate.bind(this);
+    //this.save = this.save.bind(this);
+  }
+
+  onStaffMemberNameChange(event) {
+    const maintenanceTask = this.state.maintenanceTask;
+    maintenanceTask.staffMemberName = event.target.value;
+    this.setState({maintenanceTask: maintenanceTask});
+  }
+
+  onTaskTitleChange(event) {
+    const maintenanceTask = this.state.maintenanceTask;
+    maintenanceTask.taskTitle = event.target.value;
+    this.setState({maintenanceTask: maintenanceTask});
+  }
+
+  onTaskDescriptionChange(event) {
+    const maintenanceTask = this.state.maintenanceTask;
+    maintenanceTask.taskDescription = event.target.value;
+    this.setState({maintenanceTask: maintenanceTask});
+  }
+
+  onClickCreate() {
+    this.props.dispatch(createMaintenanceTask(this.state.maintenanceTask));
   }
 
   save() {
     this.props.saveMaintenanceTask(this.props.maintenanceTask);
   }
 
-  render() {
-    //const { maintenanceTask } = this.props;
+  //maintenanceTaskRow()
 
+  render() {
     return (
       <div>
-        <h2>Create a new user</h2>
+        <h2>Create a new task</h2>
         <div className="create">
-          <input type="text" name="newUser" />&nbsp;
-        <input type="button" name="createNewUser" value="ADD USERS" />
+          <input type="text" name="newStaffMemberName" onChange={this.onStaffMemberNameChange} value={this.state.maintenanceTask.staffMemberName} />
+          <input type="text" name="newTaskTitle" onChange={this.onTaskTitleChange} value={this.state.maintenanceTask.taskTitle} />
+          <input type="text" name="newTaskDescription" onChange={this.onTaskDescriptionChange} value={this.state.maintenanceTask.taskDescription} />
+          <input type="submit" name="createNewTask" onClick={this.onClickCreate} value="CREATE TASK" />
         </div>
         <h1>Home Maintenance Tasks</h1>
         <hr className="fadeAway" />
+
         <h2>Genevieve <i className="fa fa-trash-o" onClick="" aria-hidden="true"></i></h2>
-        <h4>Create a new Task</h4>
-        <div className="create">
-          <input type="text" name="newTask" />&nbsp;
-        <input type="button" name="createNewTask" value="CREATE" />
-        </div>
         <div className="blog">
           <article>
             <h3>Fix the AC Unit <i className="fa fa-window-close-o" aria-hidden="true"></i></h3>
@@ -98,9 +134,15 @@ class MaintenanceTaskForm extends React.Component {
   }
 }
 
+const mapStateToProps = (state, ownProps) => {
+  return {
+    maintenanceTasks: state.maintenanceTasks
+  }
+}
+
 MaintenanceTaskForm.propTypes = {
-  saveMaintenanceTask: PropTypes.func.isRequired//,
-  //maintenanceTask: PropTypes.object.isRequired
+  //saveMaintenanceTask: PropTypes.func.isRequired,
+  maintenanceTask: PropTypes.object.isRequired
 };
 
-export default MaintenanceTaskForm;
+export default connect(mapStateToProps)(MaintenanceTaskForm);

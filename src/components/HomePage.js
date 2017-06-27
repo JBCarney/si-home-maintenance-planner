@@ -19,8 +19,8 @@ export const HomePage = (props) => {
 };
 
 HomePage.propTypes = {
-  actions: PropTypes.object.isRequired,
-  maintenanceTask: PropTypes.object.isRequired
+  actions: PropTypes.object.isRequired//,
+  //maintenanceTask: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state) {
